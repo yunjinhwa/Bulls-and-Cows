@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>숫자야구</title>
+
+    <link rel="stylesheet" href="css/number-baseball.css">
+  </head>
+
+  <body>
+    <div id="bg"></div>
+    <div class="layout">
+      <main class="game">
+        <h1>숫자야구 게임</h1>
+        <div class="instruction">
+          4자리 숫자를 맞춰보세요! (중복 없음, 1-9 숫자만 사용)
+        </div>
+
+        <form id="form">
+          <input type="text" id="input" placeholder="4자리 숫자 입력" maxlength="4">
+          <button>확인</button>
+        </form>
+
+        <div id="logs"></div>
+      </main>
+
+      <!-- 오른쪽 메모장 -->
+      <aside class="memo" aria-label="메모장">
+        <div class="memo-card">
+          <div class="memo-header">
+            <span>메모장</span>
+            <button id="memo-clear" type="button" title="모든 메모 지우기">지우기</button>
+          </div>
+
+          <textarea id="memo-text" placeholder="게임 전략, 후보 숫자, 패턴 등을 적어보세요." spellcheck="false"></textarea>
+
+          <div class="memo-actions">
+            <button id="memo-copy" type="button" title="메모 복사">복사</button>
+            <button id="memo-download" type="button" title="텍스트 파일로 저장">다운로드</button>
+
+            <label class="memo-upload" title="텍스트 파일 불러오기">
+              불러오기
+              <input id="memo-upload" type="file" accept=".txt" hidden>
+            </label>
+
+            <span id="memo-status" aria-live="polite"></span>
+          </div>
+        </div>
+      </aside>
+    </div>
+
+    <script src="js/number-baseball.js"></script>
+  </body>
+</html>
